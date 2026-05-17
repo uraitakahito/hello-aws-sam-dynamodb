@@ -32,29 +32,6 @@ hello-aws-sam-dynamodb/
 └── vitest.config.ts
 ```
 
-## それぞれのファイルの役割
-
-### IaC 系
-
-- **`template.yaml`** — SAM テンプレート。DynamoDBテーブル、Lambda関数5本、API Gateway を CloudFormation で定義する。**このリポジトリの心臓部**。
-- **`samconfig.toml`** — `sam deploy` などのデフォルトオプション。スタック名やリージョンを毎回入力しなくて済む。
-
-### コード系
-
-- **`src/handlers/*.ts`** — 1ファイル = 1 Lambda 関数。`export const handler = async (event) => {...}` を持つ。
-- **`src/lib/*.ts`** — DynamoDB クライアントやレスポンスヘルパー。esbuild が自動でバンドルしてくれる。
-
-### ローカル開発系
-
-- **`docker-compose.yml`** — DynamoDB Local のコンテナ定義。`sam local` 用に `sam-local` という Docker ネットワークを共有する。
-- **`scripts/create-local-table.sh`** — AWS CLI で DynamoDB Local にテーブルを作る。`template.yaml` の `TodosTable` と同じスキーマを再現。
-- **`events/*.json`** — `sam local invoke <FunctionName> -e events/xxx.json` で API Gateway イベントを再現するためのサンプル。
-
-### テスト系
-
-- **`tests/handlers/*.test.ts`** — Vitest によるユニットテスト。`aws-sdk-client-mock` で DynamoDB をモック。
-- **`tests/helpers/`** — テストを書きやすくする共通コード。
-
 ## ビルドの仕組み（TypeScript → JavaScript）
 
 `template.yaml` の各 Lambda には次の `Metadata` がついている:
