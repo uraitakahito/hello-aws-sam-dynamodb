@@ -11,22 +11,6 @@
 | AWS SAM CLI | 1.130 以上 | `sam build` / `sam local` / `sam deploy` |
 | AWS CLI | v2 | DynamoDB Local へのテーブル作成、本番デプロイ |
 
-## macOS でのインストール例
-
-```bash
-# Node.js (Homebrew + nodebrew や mise などお好みで)
-brew install node@24
-
-# Docker Desktop
-brew install --cask docker
-
-# AWS SAM CLI
-brew install aws-sam-cli
-
-# AWS CLI
-brew install awscli
-```
-
 ## バージョン確認
 
 ```bash
