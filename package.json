@@ -1,0 +1,29 @@
+{
+  "name": "hello-aws-sam-dynamodb",
+  "version": "1.0.0",
+  "description": "AWS SAM + DynamoDB 学習用 TODO REST API",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd src && npm install --no-audit --no-fund",
+    "build": "sam build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "local:db:up": "docker compose up -d",
+    "local:db:down": "docker compose down",
+    "local:db:init": "bash scripts/create-local-table.sh",
+    "local:api": "sam local start-api --docker-network sam-local",
+    "deploy": "sam deploy --guided"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.700.0",
+    "@aws-sdk/lib-dynamodb": "^3.700.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.146",
+    "@types/node": "^22.0.0",
+    "aws-sdk-client-mock": "^4.1.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}

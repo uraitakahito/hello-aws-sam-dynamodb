@@ -1,0 +1,34 @@
+{
+  "httpMethod": "PUT",
+  "path": "/todos/sample-id-1",
+  "resource": "/todos/{id}",
+  "body": "{\"completed\":true}",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "multiValueHeaders": {},
+  "isBase64Encoded": false,
+  "pathParameters": {
+    "id": "sample-id-1"
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "test-api",
+    "httpMethod": "PUT",
+    "path": "/Prod/todos/sample-id-1",
+    "protocol": "HTTP/1.1",
+    "requestId": "test-request-id",
+    "requestTime": "01/Jan/2024:00:00:00 +0000",
+    "requestTimeEpoch": 1704067200000,
+    "resourceId": "test-resource",
+    "resourcePath": "/todos/{id}",
+    "stage": "Prod",
+    "identity": {
+      "sourceIp": "127.0.0.1",
+      "userAgent": "sam-local"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# SAM build artifacts
+.aws-sam/
+
+# build output
+dist/
+
+# logs
+*.log
+npm-debug.log*
+
+# env
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
