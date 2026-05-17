@@ -1,0 +1,181 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: TODO REST API - AWS SAM + DynamoDB 学習用サンプル
+
+Parameters:
+  TodosTableName:
+    Type: String
+    Default: Todos
+    Description: DynamoDBテーブル名。テーブル定義と Lambda 環境変数で共有する。
+
+Globals:
+  Function:
+    Runtime: nodejs22.x
+    Timeout: 10
+    MemorySize: 128
+    Architectures:
+      - arm64
+    Environment:
+      Variables:
+        TODOS_TABLE_NAME: !Ref TodosTableName
+        NODE_OPTIONS: --enable-source-maps
+
+Resources:
+  TodosTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Ref TodosTableName
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+
+  TodosApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors:
+        AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+        AllowHeaders: "'Content-Type'"
+        AllowOrigin: "'*'"
+
+  CreateTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/createTodo.handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TodosTableName
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            RestApiId: !Ref TodosApi
+            Path: /todos
+            Method: POST
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: false
+        Target: es2022
+        Sourcemap: true
+        External:
+          - "@aws-sdk/*"
+        EntryPoints:
+          - handlers/createTodo.ts
+
+  ListTodosFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/listTodos.handler
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref TodosTableName
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            RestApiId: !Ref TodosApi
+            Path: /todos
+            Method: GET
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: false
+        Target: es2022
+        Sourcemap: true
+        External:
+          - "@aws-sdk/*"
+        EntryPoints:
+          - handlers/listTodos.ts
+
+  GetTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/getTodo.handler
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref TodosTableName
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            RestApiId: !Ref TodosApi
+            Path: /todos/{id}
+            Method: GET
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: false
+        Target: es2022
+        Sourcemap: true
+        External:
+          - "@aws-sdk/*"
+        EntryPoints:
+          - handlers/getTodo.ts
+
+  UpdateTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/updateTodo.handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TodosTableName
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            RestApiId: !Ref TodosApi
+            Path: /todos/{id}
+            Method: PUT
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: false
+        Target: es2022
+        Sourcemap: true
+        External:
+          - "@aws-sdk/*"
+        EntryPoints:
+          - handlers/updateTodo.ts
+
+  DeleteTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/deleteTodo.handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TodosTableName
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            RestApiId: !Ref TodosApi
+            Path: /todos/{id}
+            Method: DELETE
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: false
+        Target: es2022
+        Sourcemap: true
+        External:
+          - "@aws-sdk/*"
+        EntryPoints:
+          - handlers/deleteTodo.ts
+
+Outputs:
+  ApiUrl:
+    Description: TODO REST API のベースURL
+    Value: !Sub "https://${TodosApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
+  TodosTableName:
+    Description: DynamoDBテーブル名
+    Value: !Ref TodosTableName

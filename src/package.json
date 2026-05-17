@@ -1,0 +1,9 @@
+{
+  "name": "hello-aws-sam-dynamodb-functions",
+  "version": "1.0.0",
+  "description": "Lambda functions for SAM esbuild bundling. esbuild must be a regular dependency (not devDependency) so that 'sam build' npm-install can find it.",
+  "private": true,
+  "dependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

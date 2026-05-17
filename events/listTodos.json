@@ -1,0 +1,30 @@
+{
+  "httpMethod": "GET",
+  "path": "/todos",
+  "resource": "/todos",
+  "body": null,
+  "headers": {},
+  "multiValueHeaders": {},
+  "isBase64Encoded": false,
+  "pathParameters": null,
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "test-api",
+    "httpMethod": "GET",
+    "path": "/Prod/todos",
+    "protocol": "HTTP/1.1",
+    "requestId": "test-request-id",
+    "requestTime": "01/Jan/2024:00:00:00 +0000",
+    "requestTimeEpoch": 1704067200000,
+    "resourceId": "test-resource",
+    "resourcePath": "/todos",
+    "stage": "Prod",
+    "identity": {
+      "sourceIp": "127.0.0.1",
+      "userAgent": "sam-local"
+    }
+  }
+}
