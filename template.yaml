@@ -10,7 +10,7 @@ Parameters:
 
 Globals:
   Function:
-    Runtime: nodejs22.x
+    Runtime: nodejs24.x
     Timeout: 10
     MemorySize: 128
     Architectures:
@@ -61,7 +61,7 @@ Resources:
       BuildMethod: esbuild
       BuildProperties:
         Minify: false
-        Target: es2022
+        Target: es2024
         Sourcemap: true
         External:
           - "@aws-sdk/*"
@@ -87,7 +87,7 @@ Resources:
       BuildMethod: esbuild
       BuildProperties:
         Minify: false
-        Target: es2022
+        Target: es2024
         Sourcemap: true
         External:
           - "@aws-sdk/*"
@@ -113,7 +113,7 @@ Resources:
       BuildMethod: esbuild
       BuildProperties:
         Minify: false
-        Target: es2022
+        Target: es2024
         Sourcemap: true
         External:
           - "@aws-sdk/*"
@@ -139,7 +139,7 @@ Resources:
       BuildMethod: esbuild
       BuildProperties:
         Minify: false
-        Target: es2022
+        Target: es2024
         Sourcemap: true
         External:
           - "@aws-sdk/*"
@@ -165,7 +165,7 @@ Resources:
       BuildMethod: esbuild
       BuildProperties:
         Minify: false
-        Target: es2022
+        Target: es2024
         Sourcemap: true
         External:
           - "@aws-sdk/*"

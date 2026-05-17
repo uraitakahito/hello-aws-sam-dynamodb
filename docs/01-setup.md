@@ -6,7 +6,7 @@
 
 | ツール | バージョン | 用途 |
 |--------|------------|------|
-| Node.js | 22.x 以上 | Lambda ランタイム (nodejs22.x) と合わせる |
+| Node.js | 24.x 以上 | Lambda ランタイム (nodejs24.x) と合わせる |
 | Docker | 最新 | DynamoDB Local と sam local のコンテナ実行 |
 | AWS SAM CLI | 1.130 以上 | `sam build` / `sam local` / `sam deploy` |
 | AWS CLI | v2 | DynamoDB Local へのテーブル作成、本番デプロイ |
@@ -15,7 +15,7 @@
 
 ```bash
 # Node.js (Homebrew + nodebrew や mise などお好みで)
-brew install node@22
+brew install node@24
 
 # Docker Desktop
 brew install --cask docker
@@ -30,7 +30,7 @@ brew install awscli
 ## バージョン確認
 
 ```bash
-node --version       # v22.x.x
+node --version       # v24.x.x
 docker --version     # Docker version 27.x or later
 sam --version        # SAM CLI, version 1.130.x or later
 aws --version        # aws-cli/2.x.x

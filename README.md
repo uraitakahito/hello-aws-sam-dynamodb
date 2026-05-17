@@ -25,7 +25,7 @@ API Gateway → Lambda → DynamoDB という最小構成を、ローカル(Dyna
 
 ## 前提ツール
 
-- Node.js 22.x 以上 (Lambda ランタイムに合わせる)
+- Node.js 24.x 以上 (Lambda ランタイムに合わせる)
 - Docker / Docker Compose
 - AWS SAM CLI (`brew install aws-sam-cli`)
 - AWS CLI (DynamoDB Local 操作のため)
