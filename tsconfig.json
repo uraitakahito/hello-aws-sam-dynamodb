@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2022",
+    "target": "es2024",
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "types": ["node"],
-    "lib": ["es2022"]
+    "lib": ["es2024"]
   },
   "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules", ".aws-sam", "dist"]
