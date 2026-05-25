@@ -20,6 +20,7 @@ npm-debug.log*
 Thumbs.db
 
 # IDE
-.vscode/
+.vscode/*
+!.vscode/*.sample.json
 .idea/
 *.swp
