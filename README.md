@@ -30,8 +30,6 @@ API Gateway → Lambda → DynamoDB という最小構成を、ローカル(Dyna
 - AWS SAM CLI (`brew install aws-sam-cli`)
 - AWS CLI (DynamoDB Local 操作のため)
 
-詳細は [docs/01-setup.md](docs/01-setup.md) を参照。
-
 ---
 
 ## クイックスタート
@@ -84,15 +82,14 @@ npm test
 
 | # | ドキュメント | 内容 |
 |---|---|---|
-| 01 | [setup](docs/01-setup.md) | 前提ツールのインストール |
-| 02 | [project-structure](docs/02-project-structure.md) | リポジトリ構成の全体像 |
-| 03 | [dynamodb-table](docs/03-dynamodb-table.md) | テーブル設計と `template.yaml` |
-| 04 | [lambda-read](docs/04-lambda-read.md) | 読み取り系 Lambda (GET 2本) |
-| 05 | [lambda-write](docs/05-lambda-write.md) | 書き込み系 Lambda (POST/PUT/DELETE) |
-| 06 | [api-gateway](docs/06-api-gateway.md) | API Gateway のルーティング |
-| 07 | [local-development](docs/07-local-development.md) | DynamoDB Local + sam local の連携 |
-| 08 | [testing](docs/08-testing.md) | Vitest + aws-sdk-client-mock |
-| 09 | [deploy-and-cleanup](docs/09-deploy-and-cleanup.md) | AWS へのデプロイと削除 |
+| 01 | [project-structure](docs/01-project-structure.md) | リポジトリ構成の全体像 |
+| 02 | [dynamodb-table](docs/02-dynamodb-table.md) | テーブル設計と `template.yaml` |
+| 03 | [lambda-read](docs/03-lambda-read.md) | 読み取り系 Lambda (GET 2本) |
+| 04 | [lambda-write](docs/04-lambda-write.md) | 書き込み系 Lambda (POST/PUT/DELETE) |
+| 05 | [api-gateway](docs/05-api-gateway.md) | API Gateway のルーティング |
+| 06 | [local-development](docs/06-local-development.md) | DynamoDB Local + sam local の連携 |
+| 07 | [testing](docs/07-testing.md) | Vitest + aws-sdk-client-mock |
+| 08 | [deploy-and-cleanup](docs/08-deploy-and-cleanup.md) | AWS へのデプロイと削除 |
 
 ---
 

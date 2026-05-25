@@ -1,4 +1,4 @@
-# 04. 読み取り系 Lambda (GET)
+# 03. 読み取り系 Lambda (GET)
 
 DynamoDB から「取り出す」だけのシンプルな 2 関数。
 
@@ -99,4 +99,4 @@ sam local invoke GetTodoFunction   -e events/getTodo.json   --docker-network sam
 
 ## 次のステップ
 
-→ [05. 書き込み系 Lambda](05-lambda-write.md)
+→ [04. 書き込み系 Lambda](04-lambda-write.md)

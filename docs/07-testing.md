@@ -1,4 +1,4 @@
-# 08. テスト
+# 07. テスト
 
 Vitest + `aws-sdk-client-mock` で DynamoDB を呼び出さずにハンドラのロジックを検証する。
 
@@ -106,4 +106,4 @@ CI では `npm run typecheck && npm test` を組み合わせるとよい。
 
 ## 次のステップ
 
-→ [09. デプロイとクリーンアップ](09-deploy-and-cleanup.md)
+→ [08. デプロイとクリーンアップ](08-deploy-and-cleanup.md)
