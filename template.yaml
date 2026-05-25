@@ -23,6 +23,10 @@ Globals:
 Resources:
   TodosTable:
     Type: AWS::DynamoDB::Table
+    # 学習用リポジトリのため、スタック削除時はテーブルも削除する (既定と同じだが意図を明示)。
+    # 本番でデータを保持したい場合は Retain にする。
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
     Properties:
       TableName: !Ref TodosTableName
       # BillingMode の選択肢:
