@@ -1,4 +1,4 @@
-# 05. 書き込み系 Lambda (POST / PUT / DELETE)
+# 04. 書き込み系 Lambda (POST / PUT / DELETE)
 
 データを変更する 3 関数。読み取り系より考えることが多い (バリデーション、存在チェック、UpdateExpression など)。
 
@@ -117,4 +117,4 @@ SAM が提供する **SAM Policy Templates** を使うと、よくある権限�
 
 ## 次のステップ
 
-→ [06. API Gateway](06-api-gateway.md)
+→ [05. API Gateway](05-api-gateway.md)

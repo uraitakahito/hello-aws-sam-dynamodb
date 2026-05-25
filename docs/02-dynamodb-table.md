@@ -1,4 +1,4 @@
-# 03. DynamoDB テーブル設計
+# 02. DynamoDB テーブル設計
 
 ## テーブル設計
 
@@ -81,4 +81,4 @@ aws dynamodb list-tables --endpoint-url http://localhost:8000
 
 ## 次のステップ
 
-→ [04. 読み取り系 Lambda](04-lambda-read.md)
+→ [03. 読み取り系 Lambda](03-lambda-read.md)

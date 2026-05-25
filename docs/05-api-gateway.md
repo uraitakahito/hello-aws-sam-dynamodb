@@ -1,4 +1,4 @@
-# 06. API Gateway とルーティング
+# 05. API Gateway とルーティング
 
 5本の Lambda を HTTP エンドポイントに紐付ける。
 
@@ -83,4 +83,4 @@ Lambda が受け取る `event` の主要フィールド:
 
 ## 次のステップ
 
-→ [07. ローカル開発環境](07-local-development.md)
+→ [06. ローカル開発環境](06-local-development.md)
